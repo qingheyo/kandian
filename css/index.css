@@ -1,0 +1,102 @@
+/**
+ * index.html的样式  全局的样式
+ */
+*{
+	margin:0;
+	padding: 0;
+}
+article,nav,header,img{
+	display: block;
+}
+html,body{
+	height: 100%;
+}
+body{
+	display: flex;
+}
+/*左侧*/
+.info-left{
+	width: 200px;
+}
+/*右侧*/
+.info-right{
+	flex: 1;
+}
+/*头部*/
+.info-left>header,.info-right>header{
+	height: 60px;
+	background-color: #ccc;
+}
+.info-right .info-content{
+	height: calc(100% - 60px);
+	overflow: auto;
+	padding: 10px;
+}
+/*左侧头部*/
+.info-left>header{
+	background-color: #3d556d;
+	line-height: 60px;
+	font-size:20px;
+	color: white;
+}
+.info-left>header img{
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: 10px 10px 10px 20px;
+}
+/*nav*/
+.info-left nav{
+	height: calc(100% - 60px);
+	border-right:1px solid #ccc;
+}
+.info-left li{
+	line-height: 30px;
+	padding:5px 10px;
+	border-bottom:1px solid #ccc;
+	cursor:pointer;
+}
+.info-left li:hover{
+	color:#3d556d;
+	background-color: #ccc;
+}
+.info-left li i:first-child{
+	margin-right:10px;
+}
+.info-left li i:last-child{
+	float: right;
+	line-height: 30px;
+}
+.info-right>header{
+	background-color: #3d556d;
+}
+.info-right>header div{
+	float: right;
+	width: 40px;
+	line-height: 60px;
+	font-size: 18px;
+	color: #ccc;
+	margin-right: 40px;
+
+}
+.info-right>header img{
+	float: right;
+	margin-right: 20px;
+	margin-top: 10px;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+/*分页*/
+.pagination{
+	margin:0;
+}
+.list0{
+	display: block;
+}
+.list1,.list2,.list3{
+	display: none;
+}
+
+
+

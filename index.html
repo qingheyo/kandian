@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>看点资讯</title>
+    <link rel="stylesheet" href="./css/bootstrap-3.3.7/css/bootstrap.min.css">
+    <!-- 首页.css -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <!-- 栏目.css -->
+    <link rel="stylesheet" href="./css/categroy.css">
+    <!-- 资讯.css -->
+    <link rel="stylesheet" href="./css/info.css">
+    <!-- 用户.css -->
+    <link rel="stylesheet" href="./css/user.css">
+    <!-- 引入font-awesome -->
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- switch.min.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+    <!-- 引入jQuery -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <!-- 引入外部js,在jQuery之后引入 -->
+    <script src="./js/index.js"></script>
+    <!-- 栏目.js -->
+    <script src="./js/categroy.js"></script>
+    <!-- 首页.js -->
+    <script src="./js/home.js"></script>
+    <!-- 资讯.js -->
+    <script src="./js/info.js"></script>
+    <!-- 用户.js -->
+    <script src="./js/user.js"></script>
+    <!-- 引入echarts.js -->
+    <script src="./js/echarts.js"></script>
+    <!-- switch.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+    <!-- 引入BootStrap -->
+    <script src="./css/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- 左侧 -->
+    <div class="info-left">
+        <header>
+            <img src="./images/logo.png" alt="">
+            <span>看点资讯</span>
+        </header>
+        <!-- 左侧导航 -->
+        <nav>
+            <ul>
+                <li>
+                    <i class="fa fa-h-square" aria-hidden="true"></i> 首页
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li>
+                    <i class="fa fa-h-square" aria-hidden="true"></i> 栏目管理
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li>
+                    <i class="fa fa-h-square" aria-hidden="true"></i> 资讯管理
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li>
+                    <i class="fa fa-h-square" aria-hidden="true"></i> 用户管理
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- 右侧 -->
+    <div class="info-right">
+        <header>
+            <div>Admin</div>
+            <img src="./images/19.png" alt="">
+        </header>
+        <div class="info-content">
+            <!-- home.html -->
+            <!-- echarts容器 -->
+            <div class="container  list0">
+                <div class="shouye-panel5">
+                    <div id="echarts5" style="width: 100%;height: 100%;"></div>
+                </div>
+                <div class="shouye-panel1">
+                    <div id="echarts1" style="width: 100%;height: 100%;"></div>
+                </div>
+                <div class="shouye-panel2">
+                    <div id="echarts2" style="width: 100%;height: 100%;"></div>
+                </div>
+
+                <div class="shouye-panel3">
+                    <div id="echarts3" style="width: 100%;height: 100%;"></div>
+                </div>
+
+                <div class="shouye-panel4">
+                    <div id="echarts4" style="width: 100%;height: 100%;"></div>
+                </div>
+            </div>
+
+            <!-- categroy.html -->
+            <div class="container  list1">
+
+                <div class="row">
+                    <div class="col-xs-6  lanmu-btn">
+                        <button type="button" class="btn btn-primary add">新增</button>
+                        <button class="btn btn-primary batchdel">批量删除</button>
+                    </div>
+                    <div class="col-xs-9" style="height: 100%">
+                        <ul class="lanmu-ul">
+                            <li>编号</li>
+                            <li>名称</li>
+                            <li>父栏目</li>
+                            <li>描述</li>
+                            <li class="lanmu-li">操作</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-9  myshow"></div>
+                    <div class="text-right">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination"></ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- 新增模态框 -->
+                <div class="modal fade" id="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span >&times;</span></button>
+                                <h4 class="modal-title" id="exampleModalLabel">新增数据</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">栏目名称:</label>
+                                        <input type="text" class="form-control" id="name1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">父栏目:</label>
+                                        <select name="" id="parent1" class="form-control">
+													
+												</select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-name" class="control-label">描述:</label>
+                                        <textarea class="form-control" id="comment1"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary tijiao">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 修改模态框 -->
+
+                <div class="modal fade" id="changemodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span >&times;</span></button>
+                                <h4 class="modal-title" id="exampleModalLabel">修改数据</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">栏目名称:</label>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">父栏目:</label>
+                                        <input type="text" class="form-control" id="parent">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-name" class="control-label">描述:</label>
+                                        <textarea class="form-control" id="comment"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary tosend">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- info.html -->
+            <div class="container list2">
+                <div class="row">
+                    <div class="col-xs-12 control lanmu-btn">
+                        <select name="" id="zixun-option"></select>
+                        <button type="button" class="btn btn-primary zixun-add">新增</button>
+                        <button type="button" class="btn btn-primary zixun-batchdel">批量删除</button>
+                    </div>
+                    <div class="zixunshow">
+                        <ul>
+                            <li>编号</li>
+                            <li>文章标题</li>
+                            <li>所属栏目</li>
+                            <li>排列方式</li>
+                            <li>作者</li>
+                            <li>发布时间</li>
+                            <li>阅读次数</li>
+                            <li>操作</li>
+                        </ul>
+
+
+                    </div>
+                </div>
+                <div class="text-right">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination"></ul>
+                    </nav>
+                </div>
+
+                <!-- 新增模态框 -->
+                <div class="modal fade" id="zixunadd">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span >&times;</span></button>
+                                <h4 class="modal-title">发布资讯</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">标题:</label>
+                                        <input type="text" class="form-control" id="zixuntitle">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">所属栏目:</label>
+                                        <select name="" class="form-control" id="zixuncategroy"></select>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">列表样式:</label>
+                                        <div class="ridio">
+                                            <label for="style-one">
+											<input type="radio" id="style-one" name="oneonethree"value="style-one"/>
+											<img src="../images/1.jpg"alt="" style="height: 100px;width: 150px;">
+		
+										</label>
+                                            <label for="style-two">
+												<input type="radio" id="style-two" name="oneonethree"value="style-two"/>
+												<img src="../images/2.jpg"alt="" style="height: 100px;width: 150px;">
+			
+											</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">正文:</label>
+                                        <textarea class="form-control" id="zixunzhengwen" rows="8"></textarea>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary zixunsend">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 修改模态框 -->
+
+                <div class="modal fade" id="zixunchange">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span >&times;</span></button>
+                                <h4 class="modal-title">修改文章</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">标题:</label>
+                                        <input type="text" class="form-control" id="zixuntitle1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">所属栏目:</label>
+                                        <input type="text" class="form-control" id="zixuncategroy1">
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">列表样式:</label>
+                                        <div class="ridio">
+                                            <label for="style-one">
+												<input type="radio" id="style-one1" name="oneonethree"value="style-one"/>
+												<img src="../images/1.jpg"alt="" style="height: 100px;width: 150px;">
+			
+											</label>
+                                            <label for="style-two">
+													<input type="radio" id="style-two1" name="oneonethree"value="style-two"/>
+													<img src="../images/2.jpg"alt="" style="height: 100px;width: 150px;">
+				
+												</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">正文:</label>
+                                        <textarea class="form-control" id="zixunzhengwen1" rows="8"></textarea>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary zixunsend1">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--user.html  -->
+
+            <div class="container list3">
+                <div class="row">
+                    <div class="user-btn">
+                        <button type="button" class="btn btn-primary adduser">新增</button>
+                    </div>
+                    <div class="usershow">
+                        <!-- <div class="col-xs-10 col-xs-offset-2 userbox">
+				
+									<span>用户名:&nbsp;</span></br>
+									<span>真实姓名:&nbsp;</span></br>
+									<span>注册时间:&nbsp;</span></br>
+									<span>email:&nbsp;</span></br>
+									<span>状态:&nbsp;</span></br>
+								</div> -->
+                    </div>
+                </div>
+
+
+                <div class="modal fade" id="usermodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span >&times;</span></button>
+                                <h4 class="modal-title" id="exampleModalLabel">添加用户</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">用户名:</label>
+                                        <input type="text" class="form-control" id="name1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">密码:</label>
+                                        <input type="text" class="form-control" id="name2">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">确认密码:</label>
+                                        <input type="text" class="form-control" id="name3">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">真实姓名:</label>
+                                        <input type="text" class="form-control" id="name4">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">邮箱:</label>
+                                        <input type="text" class="form-control" id="name5">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary usersend">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

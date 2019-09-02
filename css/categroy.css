@@ -1,0 +1,26 @@
+.lanmu-ul {
+    padding-top: 20px;
+    display: flex;
+    list-style: none;
+}
+
+.lanmu-ul li {
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    flex: 1;
+    border: 2px solid coral;
+}
+
+.lanmu-ul li:not(:last-child) {
+    border-right: none;
+}
+
+.lanmu-li-btn {
+    padding-left: 5px;
+    float: left;
+    margin-left: 20px;
+    height: 30px;
+    width: 40px;
+    margin-top: 3px;
+}

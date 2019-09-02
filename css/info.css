@@ -1,0 +1,40 @@
+#zixun-option {
+    height: 40px;
+    width: 300px;
+    margin: 30px;
+}
+
+.zixunshow ul {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    list-style: none;
+}
+
+.zixunshow ul li {
+    flex: 1;
+    border: 1px solid coral;
+    line-height: 40px;
+    text-align: center;
+}
+
+.zixunshow ul li:nth-child(2) {
+    flex-basis: 250px;
+}
+
+.zixunshow ul li:nth-child(6) {
+    flex-basis: 150px;
+}
+
+.zixunshow ul li:nth-child(3),
+.zixunshow ul li:nth-child(4),
+.zixunshow ul li:nth-child(7) {
+    flex-basis: 40px;
+}
+
+.zixunshow button {
+    height: 20px;
+    width: 30px;
+    padding: 1px;
+    font-size: 12px;
+}
